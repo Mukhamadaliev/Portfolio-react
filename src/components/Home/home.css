@@ -1,0 +1,173 @@
+/* home.css */
+.section{
+    padding-left: 120px;
+}
+
+
+.background-Home {
+    background: #f8f9fa;
+    padding: 2rem 0;
+}
+
+.heme {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: 70px;
+}
+
+.div-home-left {
+    flex: 1;
+
+    b{
+        color: #2667cc;
+    }
+}
+
+.div-home-left h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.div-home-left h3 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.div-home-left p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.home-btn {
+    padding: 0.8rem 1.5rem;
+    background: #3a86ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+    background: #2667cc;
+}
+
+.div-home-left a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    color: white;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.div-home-left a:hover {
+    transform: translateY(-3px);
+}
+
+.telegram:hover {
+    background: #0088cc;
+}
+
+.instagram:hover {
+    background: #e1306c;
+}
+
+.github:hover {
+    background: #333;
+}
+
+.linkedin:hover {
+    background: #0077b5;
+}
+
+.div-home-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.div-home-right img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .heme {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .div-home-left {
+        margin-bottom: 2rem;
+    }
+    
+    .div-home-left p {
+        margin: 0 auto;
+    }
+    
+    .div-home-right {
+        order: -1;
+    }
+    
+    .div-home-right img {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .div-home-left h1 {
+        font-size: 2rem;
+    }
+    
+    .div-home-left h3 {
+        font-size: 1.2rem;
+    }
+    
+    .div-home-right img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .heme {
+        padding: 0 1rem;
+    }
+    
+    .div-home-left h1 {
+        font-size: 1.8rem;
+    }
+    
+    .home-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .div-home-left a {
+        width: 35px;
+        height: 35px;
+        margin-right: 0.5rem;
+    }
+}

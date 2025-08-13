@@ -1,0 +1,149 @@
+.section{
+    padding-left: 230px;
+}
+
+.font-size-25 {
+    font-size: 25px;
+}
+.background-projects{
+    background-color: aliceblue;
+}
+
+
+
+.max-width {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.project {
+    background-color: aliceblue;
+}
+
+.h1-Projects {
+    text-align: center;
+}
+
+.div-project-max-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-1,
+.project-2,
+.project-3 {
+    background-color: white;
+    padding: 15px;
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+
+
+        li {
+            background-color: whitesmoke;
+            padding: 5px 10px;
+        }
+    }
+
+}   
+
+.project-5,.project-4{
+    height: 310px;
+}
+.project-1>img,
+.project-2>img,
+.project-3>img {
+    width: 350px;
+    height: auto;
+    object-fit: cover;
+}
+
+.i {
+    margin-top: 10px;
+    padding-left: 15px;
+    color: rgba(0, 0, 0, 0.662);
+}
+
+
+
+
+@media (max-width: 992px) {
+    .project{
+        margin-top: 1000px;
+    }
+    
+    .div-project-max-1 {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .project-1,
+    .project-2,
+    .project-3 {
+        flex: 0 0 calc(50% - 20px);
+        min-width: 250px;
+        flex-wrap: wrap;
+    }
+}
+
+/* --- 776px uchun responsiv qismi --- */
+@media (max-width: 776px) {
+    .h1-Projects {
+        font-size: 1.6rem;
+    }
+
+    .div-project-max-1 {
+        justify-content: center;
+    }
+
+    .project-1,
+    .project-2,
+    .project-3 {
+        flex: 1 1 calc(50% - 20px);
+        max-width: 400px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .project{
+        margin-top: 1000px;
+    }
+    .h1-Projects {
+        font-size: 1.8rem;
+    }
+
+    .div-project-max-1 {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        /* margin-top: 600px; */
+    }
+    
+    .project-1,
+    .project-2,
+    .project-3 {
+        margin: 10px 0px;
+        flex: 0 0 100%;
+        max-width: 400px;
+        flex-wrap: wrap;
+    }
+}
+
+/* --- 500px va undan kichik ekranlar --- */
+@media (max-width: 500px) {
+    .div-project-max-1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-1,
+    .project-2,
+    .project-3 {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}

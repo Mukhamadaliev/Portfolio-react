@@ -1,0 +1,169 @@
+/* sagbar.css */
+
+.sagbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #2a2e35;
+    color: white;
+    padding: 2rem 1.5rem;
+    z-index: 100;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+.sagbar-min {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sagbar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    border: 5px solid #3a3f47;
+}
+
+.sagbar h4 {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.sagbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sagbar ul li {
+    margin-bottom: 0.5rem;
+}
+
+.sagbar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #b1b1b1;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.sagbar ul li a:hover {
+    background-color: #3a3f47;
+    color: white;
+}
+
+.sagbar ul li a svg {
+    font-size: 1.2rem;
+}
+
+.sagbar hr {
+    border: none;
+    height: 1px;
+    background-color: #3a3f47;
+    margin: 0.5rem 0;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .sagbar {
+        width: 80px;
+        padding: 2rem 0.5rem;
+    }
+    
+    .sagbar h4 {
+        display: none;
+    }
+    
+    .sagbar img {
+        width: 60px;
+        height: 60px;
+        border-width: 3px;
+    }
+    
+    .sagbar ul li a {
+        justify-content: center;
+        padding: 0.7rem 0;
+    }
+    
+    .sagbar ul li a span {
+        display: none;
+    }
+    
+    .sagbar hr {
+        margin: 0.3rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .sagbar {
+        width: 60px;
+        padding: 1.5rem 0.3rem;
+    }
+    
+    .sagbar img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .sagbar ul li a svg {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .sagbar {
+        bottom: 0;
+        top: auto;
+        height: auto;
+        width: 100%;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .sagbar-min {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    .sagbar img, 
+    .sagbar h4,
+    .sagbar hr {
+        display: none;
+    }
+    
+    .sagbar ul {
+        display: flex;
+        gap: 0.5rem;
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    .sagbar ul li {
+        margin-bottom: 0;
+    }
+    
+    .sagbar ul li a {
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    .sagbar ul li a svg {
+        font-size: 1rem;
+    }
+}

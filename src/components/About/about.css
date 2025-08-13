@@ -1,0 +1,167 @@
+/* about.css */
+
+.background-about{
+
+    background-color: #f0f7ff;
+}
+/* Base Styles */
+.section {
+  padding: 4rem 0;
+  padding-left: 140px;
+}
+
+.about {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.about-left {
+  flex: 1;
+}
+
+.about-left img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-right {
+  flex: 1;
+}
+
+.about-right h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #1a3e72;
+}
+
+.about-right p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3a86ff;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.card-text span {
+  font-size: 0.8rem;
+  color: #4a5568;
+}
+
+.About-btn {
+  padding: 0.8rem 1.5rem;
+  background: #3a86ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.About-btn:hover {
+  background: #2667cc;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .about {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .about-left img {
+    max-width: 350px;
+  }
+  
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .about-right h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  
+  .about-right p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 0 1.5rem;
+  }
+  
+  .about-right h1 {
+    font-size: 2rem;
+  }
+  
+  .card-number {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 2rem 0;
+  }
+  
+  .about {
+    padding: 0 1rem;
+  }
+  
+  .about-left img {
+    max-width: 280px;
+  }
+  
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-right h1 {
+    font-size: 1.8rem;
+  }
+  
+  .About-btn {
+    width: 100%;
+    padding: 0.7rem;
+  }
+}

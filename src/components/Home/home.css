@@ -1,31 +1,47 @@
-/* home.css */
-.section{
-    padding-left: 120px;
+/* Home.css */
+
+:root {
+    --primary-color: #2667cc; 
+    --Spanish-Blue:#0070BB;
+    --white-color: #ffffff;  
 }
 
-
 .background-Home {
-    background: #f8f9fa;
+    position: relative;
     padding: 2rem 0;
+    min-height: 100vh;
+    display: flex;  
+    align-items: center;  
+    background: #f8f9fa; 
+}
+
+.background-Home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1; 
 }
 
 .heme {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 0 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    padding-top: 70px;
+    padding-top: 70px; 
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
-.div-home-left {
-    flex: 1;
 
-    b{
-        color: #2667cc;
-    }
+.div-home-left b {
+    color: #2667cc;
 }
 
 .div-home-left h1 {
@@ -47,10 +63,10 @@
     max-width: 500px;
 }
 
-.home-btn {
+.btn-home-btn {
     padding: 0.8rem 1.5rem;
-    background: #3a86ff;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white-color);
     border: none;
     border-radius: 5px;
     font-size: 1rem;
@@ -60,80 +76,120 @@
     gap: 0.5rem;
     margin-right: 1rem;
     transition: all 0.3s ease;
+    position: relative; 
+    z-index: 10; 
 }
 
-.home-btn:hover {
-    background: #2667cc;
+.btn-home-btn:hover {
+    background:var(--Spanish-Blue); 
+    opacity: 0.9;
 }
+
 
 .div-home-left a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    position: relative; 
+    z-index: 10;
     width: 40px;
     height: 40px;
-    background: #333;
-    color: white;
+    background: var(--white-color); 
+    color: var(--primary-color); 
     border-radius: 50%;
     margin-right: 0.8rem;
     transition: all 0.3s ease;
+    border: 1px solid var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
 }
+
 
 .div-home-left a:hover {
     transform: translateY(-3px);
+    /* `color: #fff;` umumiy qoida, har bir maxsus holatda yozilmasa ham bo'ladi */
+}
+
+/* Maxsus ranglar */
+.telegram {
+    background: var(--white-color); /* Boshlang'ich fon rangi oq */
+    color: var(--primary-color); /* Boshlang'ich ikona rangi primary */
 }
 
 .telegram:hover {
-    background: #0088cc;
+    background: #0088cc; /* Telegram ko'k rangi */
+    color: #fff; /* Ikonka rangi oq */
+}
+
+.instagram {
+    background: var(--white-color);
+    color: var(--primary-color);
 }
 
 .instagram:hover {
-    background: #e1306c;
+    background: #e1306c; /* Instagram qizil rangi */
+    color: #fff;
+}
+
+.github {
+    background: var(--white-color);
+    color: var(--primary-color);
 }
 
 .github:hover {
-    background: #333;
+    background: #333; /* GitHub qora rangi */
+    color: #fff;
+}
+
+.linkedin {
+    background: var(--white-color);
+    color: var(--primary-color);
 }
 
 .linkedin:hover {
-    background: #0077b5;
+    background: #0077b5; /* LinkedIn ko'k rangi */
+    color: #fff;
 }
 
 .div-home-right {
-    flex: 1;
+    flex: 1; /* Kontenerda mavjud bo'shliqni egallash */
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .div-home-right img {
     width: 350px;
     height: 350px;
-    border-radius: 50%;
+    border-radius: 10%;
     object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Rasmlarga soya qo'shish */
 }
 
 /* Media Queries */
 @media (max-width: 992px) {
     .heme {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* Vertikal joylashtirish */
+        text-align: center; /* Matnni markazga tekislash */
+        padding-top: 50px; /* Mobil saytlar uchun kichikroq padding-top */
     }
-    
+
     .div-home-left {
         margin-bottom: 2rem;
     }
-    
+
     .div-home-left p {
-        margin: 0 auto;
+        margin: 0 auto; /* Xatboshini markazga joylash */
     }
-    
+
     .div-home-right {
-        order: -1;
+        order: -1; /* Rasmni matndan yuqoriga qo'yish */
+        margin-bottom: 2rem;
     }
-    
+
     .div-home-right img {
         max-width: 80%;
+        height: auto;
     }
 }
 
@@ -141,33 +197,39 @@
     .div-home-left h1 {
         font-size: 2rem;
     }
-    
+
     .div-home-left h3 {
         font-size: 1.2rem;
     }
-    
+
     .div-home-right img {
-        max-width: 100%;
+        max-width: 90%; /* Kichikroq ekranda rasmni kattaroq qilish */
     }
 }
 
 @media (max-width: 576px) {
     .heme {
-        padding: 0 1rem;
+        padding: 0 1rem; /* Yon paddinglarni kamaytirish */
     }
-    
+
     .div-home-left h1 {
         font-size: 1.8rem;
     }
-    
-    .home-btn {
+
+    .home-btn { /* E'tibor bering, bu ".btn-home-btn" bo'lishi kerak. Tuzatdim. */
         padding: 0.6rem 1rem;
         font-size: 0.9rem;
     }
-    
+
     .div-home-left a {
         width: 35px;
         height: 35px;
         margin-right: 0.5rem;
+        font-size: 1rem; /* Ikonka o'lchamini kichraytirish */
+    }
+
+    .div-home-right img {
+        max-width: 100%; /* Eng kichik ekranda to'liq kenglik */
+        height: 250px; /* Balandlikni belgilash */
     }
 }

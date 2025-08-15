@@ -17,3 +17,13 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
+
+:root {
+  --primary-color: #318CE7;
+  --white-color: #FFFFFF;
+  --black-color: #000000;
+}
+
+.icons {
+  cursor: pointer;
+}

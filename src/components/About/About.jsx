@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="background-about">
 
-      <section id="about" className="section">
+      <section id="about" className="section" data-aos="fade-up">
         <div className="about">
           <div className="about-left">
             <img src={img2} alt="" />

@@ -9,7 +9,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section contact-section">
+    <section id="contact" className="section contact-section" data-aos="fade-up">
       <div className="container">
         <h2 className="section-title">Let's work together</h2>
 

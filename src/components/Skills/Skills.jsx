@@ -13,7 +13,7 @@ const Skills = () => {
 
     <br />
     return (
-        <div className="background-skills">
+        <div className="background-skills" data-aos="fade-up">
 
             <section id='Skills' className='section'>
 

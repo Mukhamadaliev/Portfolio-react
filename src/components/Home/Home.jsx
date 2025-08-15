@@ -14,6 +14,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 const Home = () => {
     return (
         <div className="background-Home">
+            <div className="max-width">
 
             <section id="home" className="section">
                 <div className="heme">
@@ -24,17 +25,19 @@ const Home = () => {
                         <br />
                         <p>I create modern, responsive and beautiful web experiences. With 1+ years of experience building interfaces with React, Tailwind and other modern tools.</p>
                         <br />
-                        <button className='home-btn'>Downldad CV <MdDownload /></button>
-                        <a href="https://t.me/Mukhamadaliyev20" className='telegram'><FaTelegramPlane /></a>
-                        <a href="https://www.instagram.com/ibrohim_325" className='instagram'><FaInstagram /></a>
-                        <a href="https://www.github.com/Mukhmmadaliev" className='github'><IoLogoGithub /></a>
-                        <a href="https://www.linkedin.com/" className='linkedin'><FaLinkedinIn /></a>
+                                <button className='btn-home-btn'>Downldad CV <MdDownload /></button>
+
+                            <a href="https://t.me/Mukhamadaliyev20" className='telegram'><FaTelegramPlane /></a>
+                            <a href="https://www.instagram.com/ibrohim_325" className='instagram'><FaInstagram /></a>
+                            <a href="https://www.github.com/Mukhmmadaliev" className='github'><IoLogoGithub /></a>
+                            <a href="https://www.linkedin.com/" className='linkedin'><FaLinkedinIn /></a>
                     </div>
                     <div className="div-home-right">
                         <img src={img1} alt="man" />
                     </div>
                 </div>
             </section>
+            </div>
         </div>
     );
 }

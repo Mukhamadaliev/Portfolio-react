@@ -7,7 +7,7 @@ import rasm5 from './assets/2025-06-10_22-38-38.png'
 
 const Projects = () => {
     return (
-        <div className="background-projects">
+        <div className="background-projects" data-aos="fade-up">
 
             <section id="Portfolio" className="section">
 

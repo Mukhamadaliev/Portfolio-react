@@ -1,235 +1,356 @@
-/* Home.css */
-
 :root {
-    --primary-color: #2667cc; 
-    --Spanish-Blue:#0070BB;
-    --white-color: #ffffff;  
+  --primary-color: #2667cc;
+  --Spanish-Blue: #0070BB;
+  --white-color: #ffffff;
 }
 
-.background-Home {
-    position: relative;
-    padding: 2rem 0;
-    min-height: 100vh;
-    display: flex;  
-    align-items: center;  
-    background: #f8f9fa; 
+/* Umumiy Uslublar */
+.background-home {
+  background: var(--white-color);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-.background-Home::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: -1; 
+.max-width {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.heme {
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    padding-top: 70px; 
-    width: 100%;
-    max-width: 1200px; 
-    margin: 0 auto; 
+.section {
+  padding: 4rem 0; /* Bo'limlar uchun standart yuqori/pastki padding */
 }
 
-
-.div-home-left b {
-    color: #2667cc;
+/* Asosiy Sahifa Kontaineri - Mobil-birinchi standartlar */
+.home-container {
+  display: flex;
+  flex-direction: column; /* Mobil ekranlarda rasm tepada, matn pastda */
+  align-items: center; /* Vertikal joylashuvda elementlarni markazga tekislash */
+  text-align: center; /* Matnni markazga tekislash */
+  gap: 20px; /* Elementlar orasidagi bo'sh joy */
+  padding-left: 170px;
 }
 
-.div-home-left h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #333;
+/* Chap tomondagi qism (Matn kontent) */
+.home-left {
+  order: 2; /* Mobil ekranlarda matn rasmdan keyin turadi */
 }
 
-.div-home-left h3 {
-    font-size: 1.5rem;
-    color: #555;
-    margin-bottom: 1rem;
+.home-left h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
 }
 
-.div-home-left p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.6;
-    max-width: 500px;
+.home-left h1 b {
+  color: var(--Spanish-Blue);
 }
 
-.btn-home-btn {
-    padding: 0.8rem 1.5rem;
-    background: var(--primary-color);
-    color: var(--white-color);
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-right: 1rem;
-    transition: all 0.3s ease;
-    position: relative; 
-    z-index: 10; 
+.home-left h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
-.btn-home-btn:hover {
-    background:var(--Spanish-Blue); 
-    opacity: 0.9;
+.home-left p {
+  font-size: 1rem;
+  max-width: 500px;
+  line-height: 1.6;
+  color: #444;
 }
 
+/* Tugmalar va Havolalar */
+.home-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Mobil ekranlarda tugmalarni markazga tekislash */
+  gap: 1rem;
+  flex-wrap: wrap; /* Tugmalarni keyingi qatorga o'tkazish */
+}
 
-.div-home-left a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; 
-    z-index: 10;
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-download:hover {
+  background: var(--Spanish-Blue);
+}
+
+/* Ijtimoiy Havolalar */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--primary-color);
+  padding: 0.6rem;
+  border-radius: 50%;
+}
+
+.social-links a:hover {
+  color: var(--Spanish-Blue);
+}
+
+/* O'ng tomondagi qism (Rasm) */
+.home-right {
+  order: 1; /* Mobil ekranlarda rasm matndan oldin turadi */
+}
+
+.home-right img {
+  width: 300px; /* Boshlang'ich rasm kengligi */
+  height: auto; /* Balandlikni avtomatik sozlash */
+  max-width: 100%;
+  border-radius: 3%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  object-fit: cover; /* Rasmni to'ldirish va kesish */
+  display: block; /* Markazga tekislash uchun blok elementga aylantirish */
+  margin: 0 auto; /* Rasmni markazga tekislash */
+}
+
+/* --- Moslashuvchan Dizayn (Responsive Design) --- */
+
+/* Kichik Mobil Telefonlar (max-width: 480px) */
+@media (max-width: 480px) {
+  .max-width {
+    padding: 0 15px; /* Kichik ekranlarda paddingni kamaytirish */
+  }
+
+  .home-left h1 {
+    font-size: 24px;
+  }
+
+  .home-left h3 {
+    font-size: 16px;
+  }
+
+  .home-left p {
+    font-size: 14px;
+  }
+
+  .home-right img {
+    width: 200px; /* Kichik mobil ekranlarda rasm kengligini kichraytirish */
+    height: 200px; /* Kichik mobil ekranlarda rasm balandligini kichraytirish */
+  }
+
+  .social-links {
+    gap: 10px;
+  }
+
+  .social-links a {
     width: 40px;
     height: 40px;
-    background: var(--white-color); 
-    color: var(--primary-color); 
-    border-radius: 50%;
-    margin-right: 0.8rem;
-    transition: all 0.3s ease;
-    border: 1px solid var(--primary-color);
-    text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 18px;
+  }
 }
 
+/* Planshetlar (min-width: 768px) - Vertikal yo'nalish */
+@media (min-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
 
-.div-home-left a:hover {
-    transform: translateY(-3px);
-    /* `color: #fff;` umumiy qoida, har bir maxsus holatda yozilmasa ham bo'ladi */
+  .home-container {
+    flex-direction: column; /* Planshetlarda ham rasm tepada, matn pastda qoladi */
+    text-align: center;
+  }
+
+  .home-left h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .home-left h3 {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .home-left p {
+    font-size: 18px;
+    margin-bottom: 35px;
+  }
+
+  .home-buttons {
+    justify-content: center; /* Tugmalarni markazda saqlash */
+  }
+
+  .home-right img {
+    width: 300px;
+    height: 300px;
+  }
 }
 
-/* Maxsus ranglar */
-.telegram {
-    background: var(--white-color); /* Boshlang'ich fon rangi oq */
-    color: var(--primary-color); /* Boshlang'ich ikona rangi primary */
-}
+/* Mobil va Planshet (max-width: 1023px) - Gorizontal yo'nalish */
+@media (max-width: 1023px) and (orientation: landscape) {
+  .background-home {
+    padding: 10px 0;
+  }
 
-.telegram:hover {
-    background: #0088cc; /* Telegram ko'k rangi */
-    color: #fff; /* Ikonka rangi oq */
-}
+  .section {
+    padding: 20px 0;
+  }
 
-.instagram {
-    background: var(--white-color);
-    color: var(--primary-color);
-}
-
-.instagram:hover {
-    background: #e1306c; /* Instagram qizil rangi */
-    color: #fff;
-}
-
-.github {
-    background: var(--white-color);
-    color: var(--primary-color);
-}
-
-.github:hover {
-    background: #333; /* GitHub qora rangi */
-    color: #fff;
-}
-
-.linkedin {
-    background: var(--white-color);
-    color: var(--primary-color);
-}
-
-.linkedin:hover {
-    background: #0077b5; /* LinkedIn ko'k rangi */
-    color: #fff;
-}
-
-.div-home-right {
-    flex: 1; /* Kontenerda mavjud bo'shliqni egallash */
-    display: flex;
-    justify-content: center;
+  .home-container {
+    flex-direction: row; /* Gorizontal mobil/planshetlarda yonma-yon joylashuv */
+    gap: 30px;
     align-items: center;
+    text-align: left; /* Matnni chapga tekislash */
+  }
+
+  .home-left {
+    order: 1; /* Matn chapda */
+    text-align: left;
+    padding-left: 100px;
+  }
+
+  .home-left h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .home-left h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .home-left p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .home-buttons {
+    flex-direction: row;
+    gap: 15px;
+    justify-content: left; /* Tugmalarni chapga tekislash */
+  }
+
+  .btn-download {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .social-links a {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .home-right {
+    order: 2; /* Rasm o'ngda */
+  }
+
+  .home-right img {
+    width: 200px; /* Gorizontal mobil/planshetlarda rasm kengligini kichraytirish */
+    height: 200px;
+  }
 }
 
-.div-home-right img {
-    width: 350px;
-    height: 350px;
-    border-radius: 10%;
-    object-fit: cover;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Rasmlarga soya qo'shish */
+
+/* Katta Planshetlar va Ish Stoli Kompyuterlar (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .max-width {
+    padding: 0 40px;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .home-container {
+    flex-direction: row; /* Katta ekranlarda yonma-yon joylashuv */
+    justify-content: space-between;
+    align-items: center;
+    text-align: left; /* Matnni chapga tekislash */
+    gap: 80px;
+  }
+
+  .home-left {
+    order: 1; /* Matn chap tomonda */
+    flex: 1; /* Matn kontentining kengayishiga ruxsat berish */
+  }
+
+  .home-buttons {
+    justify-content: left; /* Tugmalarni chapga tekislash */
+  }
+
+  .home-right {
+    order: 2; /* Rasm o'ng tomonda */
+    flex-shrink: 0; /* Rasmni keraksiz kichraytirmaslik */
+  }
+
+  .home-left h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .home-left h3 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .home-left p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    max-width: 600px;
+  }
+
+  .btn-download {
+    padding: 15px 30px;
+    font-size: 18px;
+  }
+
+  .social-links a {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .home-right img {
+    width: 300px; /* Ish stoli ekranida rasm kengligi */
+    height: 300px; /* Ish stoli ekranida rasm balandligi */
+  }
 }
 
-/* Media Queries */
-@media (max-width: 992px) {
-    .heme {
-        flex-direction: column; /* Vertikal joylashtirish */
-        text-align: center; /* Matnni markazga tekislash */
-        padding-top: 50px; /* Mobil saytlar uchun kichikroq padding-top */
-    }
+/* Katta Ish Stoli Kompyuterlar (min-width: 1440px) */
+@media (min-width: 1440px) {
+  .max-width {
+    max-width: 1400px;
+    padding: 0 60px;
+  }
 
-    .div-home-left {
-        margin-bottom: 2rem;
-    }
+  .home-left h1 {
+    font-size: 56px;
+  }
 
-    .div-home-left p {
-        margin: 0 auto; /* Xatboshini markazga joylash */
-    }
+  .home-left h3 {
+    font-size: 30px;
+  }
 
-    .div-home-right {
-        order: -1; /* Rasmni matndan yuqoriga qo'yish */
-        margin-bottom: 2rem;
-    }
+  .home-left p {
+    font-size: 22px;
+  }
 
-    .div-home-right img {
-        max-width: 80%;
-        height: auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .div-home-left h1 {
-        font-size: 2rem;
-    }
-
-    .div-home-left h3 {
-        font-size: 1.2rem;
-    }
-
-    .div-home-right img {
-        max-width: 90%; /* Kichikroq ekranda rasmni kattaroq qilish */
-    }
-}
-
-@media (max-width: 576px) {
-    .heme {
-        padding: 0 1rem; /* Yon paddinglarni kamaytirish */
-    }
-
-    .div-home-left h1 {
-        font-size: 1.8rem;
-    }
-
-    .home-btn { /* E'tibor bering, bu ".btn-home-btn" bo'lishi kerak. Tuzatdim. */
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .div-home-left a {
-        width: 35px;
-        height: 35px;
-        margin-right: 0.5rem;
-        font-size: 1rem; /* Ikonka o'lchamini kichraytirish */
-    }
-
-    .div-home-right img {
-        max-width: 100%; /* Eng kichik ekranda to'liq kenglik */
-        height: 250px; /* Balandlikni belgilash */
-    }
+  .home-right img {
+    width: 400px; /* Katta ish stoli ekranlarida rasm kengligini oshirish */
+    height: 400px; /* Katta ish stoli ekranlarida rasm balandligini oshirish */
+  }
 }

@@ -7,11 +7,11 @@ import rasm5 from './assets/2025-06-10_22-38-38.png'
 
 const Projects = () => {
     return (
-        <div className="background-projects" data-aos="fade-up">
+        <div className="background-projects"  data-aos="fade-down-left">
 
             <section id="Portfolio" className="section">
 
-                <div className="backhround-project">
+                <div className="background-project">
 
                     <div className="max-width">
 

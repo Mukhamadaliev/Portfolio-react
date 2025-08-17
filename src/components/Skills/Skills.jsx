@@ -13,8 +13,8 @@ const Skills = () => {
 
     <br />
     return (
-        <div className="background-skills" data-aos="fade-up">
-
+        <div className="background-skills" data-aos="fade-up-left">
+            
             <section id='Skills' className='section'>
 
                 <div className="skills-container">

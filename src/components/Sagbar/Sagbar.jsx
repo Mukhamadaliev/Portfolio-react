@@ -4,7 +4,9 @@ import img1 from './img/image.png';
 import { MdHome, MdPerson } from "react-icons/md";
 import { FaListUl, FaBriefcase, FaBars } from "react-icons/fa";
 import { IoMdChatboxes } from "react-icons/io";
-import { IoCloseSharp } from "react-icons/io5";
+import { IoChevronDown, IoChevronUp } from "react-icons/io5"; // ⬅️ Pastga/tepaga icon
+
+import { NavLink } from "react-router-dom";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -23,37 +25,66 @@ const Sagbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeSagbar = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
-      {/* Mobil versiya tugmasi */}
-      <div className={`sagbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleSagbar}>
-        {isOpen ? <IoCloseSharp /> : <FaBars />}
-      </div>
+      {/* Mobil pastki menyu tugmasi */}
+      <button className={`sagbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleSagbar}>
+        {isOpen ? <IoChevronDown /> : <IoChevronUp />}
+      </button>
 
-      {/* Sidebar menyu */}
+      {/* Sidebar menyu (pastdan chiqadi) */}
       <div className={`sagbar ${isOpen ? 'open' : ''}`} data-aos="fade-right">
-        <div className="sagbar-min" data-aos="fade-right">
+        <div className="sagbar-min">
           <img src={img1} alt="Profile" />
-          <h4>Ibrohim</h4>
+          <h4>Ibrohim.dev</h4>
           <br />
+
           <ul>
-            <li><a href="#home"><MdHome /> Home</a></li>
+            <li>
+              <NavLink to="/" onClick={closeSagbar}>
+                <MdHome /> Home
+              </NavLink>
+            </li>
           </ul>
           <hr />
+
           <ul>
-            <li><a href="#about"><MdPerson /> About</a></li>
+            <li>
+              <NavLink to="/about" onClick={closeSagbar}>
+                <MdPerson /> About
+              </NavLink>
+            </li>
           </ul>
           <hr />
+
           <ul>
-            <li><a href="#Skills"><FaListUl /> Skills</a></li>
+            <li>
+              <NavLink to="/skills" onClick={closeSagbar}>
+                <FaListUl /> Skills
+              </NavLink>
+            </li>
           </ul>
           <hr />
+
           <ul>
-            <li><a href="#Projects"><FaBriefcase /> Projects</a></li>
+            <li>
+              <NavLink to="/projects" onClick={closeSagbar}>
+                <FaBriefcase /> Projects
+              </NavLink>
+            </li>
           </ul>
           <hr />
+
           <ul>
-            <li><a href="#contact"><IoMdChatboxes /> Contact</a></li>
+            <li>
+              <NavLink to="/contact" onClick={closeSagbar}>
+                <IoMdChatboxes /> Contact
+              </NavLink>
+            </li>
           </ul>
           <hr />
         </div>

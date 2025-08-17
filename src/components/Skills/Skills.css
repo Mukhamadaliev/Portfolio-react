@@ -1,43 +1,86 @@
+:root {
+    /* Assuming these are defined elsewhere or for consistency */
+    --primary-color: #2667cc;
+    --Spanish-Blue: #0070BB;
+    --white-color: #ffffff;
+    --text-color-light: #333;
+    --text-color-dark: #eee;
+    --background-light: #f0f4f8;
+    --background-dark: #2c2c2c;
+    --card-background-light: white;
+    --card-background-dark: #3a3a3a;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --progress-bar-bg-light: #ddd;
+    --progress-bar-bg-dark: #555;
+}
 
-.background-skills{
-    background: #f0f4f8;
+/* General Section Styles (ensure consistency with other sections) */
+.section {
+    padding: 4rem 0;
+    /* Default padding for sections */
+}
+
+.max-width {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Skills Section Specific Styles - Mobile First */
+.background-skills {
+    padding-left: 170px;
+    background: var(--background-light);
+    /* Light background for the skills section */
+    padding: 2rem 0;
+    /* Default vertical padding for the section */
 }
 
 .skills-container {
-    display: flex;
-    justify-content: center;
-    padding: 50px 20px;
-    background: #f0f4f8;
+    padding: 20px;
+    margin-left: 200px;
+    /* Default padding inside the container */
 }
 
 .div-skills-max {
     max-width: 1000px;
     width: 100%;
+    margin: 0 auto;
+    /* Center the content within its max-width */
 }
 
 .h1-skills {
     text-align: center;
     font-size: 2.5rem;
+    /* Default heading size */
     margin-bottom: 40px;
-    color: #333;
+    color: var(--text-color-light);
 }
 
+/* Skill Items Layout - Default (Mobile) */
 .skills-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* Stack skill items vertically on small screens */
+    align-items: center;
+    /* Center stacked items */
     gap: 20px;
-    justify-content: center;
+    /* Space between stacked items */
 }
 
 .skill-item {
-    background: white;
-    flex: 1 1 calc(33.333% - 20px);
-    min-width: 250px;
+    background: var(--card-background-light);
+    width: 100%;
+    /* Take full width of parent on small screens */
+    max-width: 300px;
+    /* Limit individual item width for better readability on small screens */
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px var(--shadow-light);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-color-light);
+    /* Default text color */
 }
 
 .skill-item:hover {
@@ -47,6 +90,8 @@
 .skill-item i {
     font-size: 50px;
     margin-bottom: 10px;
+    color: var(--primary-color);
+    /* Apply primary color for icons */
 }
 
 .skill-name {
@@ -57,11 +102,13 @@
 
 .skill-percentage {
     color: #666;
+    /* Specific dark grey for percentage in light mode */
     margin-bottom: 10px;
+    font-size: 0.9rem;
 }
 
 .skill-bar {
-    background: #ddd;
+    background: var(--progress-bar-bg-light);
     border-radius: 10px;
     height: 10px;
     overflow: hidden;
@@ -70,12 +117,247 @@
 .skill-progress {
     height: 10px;
     border-radius: 10px;
-    transition: width 1s ease-in-out;
+    background: var(--Spanish-Blue);
+    /* Use Spanish Blue for progress bar */
+    width: 0;
+    /* Start at 0 for animation */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* --- Responsive Design --- */
+
+/* Small Mobile (Adjustments for very small screens if needed) */
+@media (max-width: 480px) {
+    .section {
+        padding: 1.5rem 15px;
+        /* More compact padding */
+    }
+
+    .h1-skills {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
     .skill-item {
-        flex: 1 1 100%;
+        padding: 15px;
+    }
+
+    .skill-item i {
+        font-size: 40px;
+    }
+
+    .skill-name {
+        font-size: 1.1rem;
+    }
+
+    .skill-percentage {
+        font-size: 0.85rem;
+    }
+}
+
+/* Tablet Layout (min-width: 768px) - 2 Columns */
+@media (min-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .skills-container {
+        padding: 40px;
+    }
+
+    .h1-skills {
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+
+    .skills-row {
+        display: grid;
+        /* Switch to grid layout */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        /* 2 columns, adjust as needed */
+        gap: 30px;
+        /* Gap between grid items */
+        align-items: stretch;
+        /* Ensure items stretch to fill row height */
+    }
+
+    /* Reset flex properties that are now handled by grid */
+    .skill-item {
+        width: auto;
+        max-width: none;
+        padding: 30px;
+    }
+
+    .skill-item i {
+        font-size: 55px;
+    }
+
+    .skill-name {
+        font-size: 1.3rem;
+    }
+
+    .skill-percentage {
+        font-size: 1rem;
+    }
+
+    .skill-bar {
+        height: 11px;
+    }
+}
+
+/* Desktop Layout (min-width: 1024px) - 3 Columns */
+@media (min-width: 1024px) {
+    .section {
+        padding: 80px 0;
+    }
+
+    .max-width {
+        padding: 0 40px;
+        /* Add horizontal padding for wider screens */
+    }
+
+    .skills-container {
+        padding: 60px;
+    }
+
+    .h1-skills {
+        font-size: 48px;
+        margin-bottom: 60px;
+    }
+
+    .skills-row {
+        grid-template-columns: repeat(3, 1fr);
+        /* Explicitly 3 columns */
+        gap: 35px;
+    }
+
+    .skill-item {
+        padding: 35px;
+    }
+
+    .skill-item i {
+        font-size: 60px;
+        margin-bottom: 25px;
+    }
+
+    .skill-name {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .skill-percentage {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .skill-bar {
+        height: 12px;
+    }
+}
+
+/* Large Desktop (min-width: 1440px) */
+@media (min-width: 1440px) {
+    .max-width {
+        max-width: 1400px;
+        padding: 0 60px;
+    }
+
+    .skills-container {
+        padding: 80px;
+    }
+
+    .h1-skills {
+        font-size: 56px;
+        margin-bottom: 80px;
+    }
+
+    .skills-row {
+        gap: 40px;
+    }
+
+    .skill-item {
+        padding: 40px;
+    }
+
+    .skill-item i {
+        font-size: 70px;
+        margin-bottom: 30px;
+    }
+
+    .skill-name {
+        font-size: 1.5rem;
+        margin-bottom: 18px;
+    }
+
+    .skill-percentage {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+
+    .skill-bar {
+        height: 14px;
+    }
+}
+
+/* Animation for skill bars */
+@media (prefers-reduced-motion: no-preference) {
+    .skill-progress {
+        animation: fillBar 2s ease-in-out forwards;
+        /* 'forwards' keeps the final state */
+    }
+}
+
+
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .background-skills {
+        background: var(--background-dark);
+    }
+
+    .h1-skills {
+        color: var(--white-color);
+    }
+
+    .skill-item {
+        background: var(--card-background-dark);
+        box-shadow: 0 4px 8px var(--shadow-dark);
+        color: var(--text-color-dark);
+    }
+
+    .skill-item i {
+        color: var(--Spanish-Blue);
+    }
+
+    .skill-name {
+        color: var(--text-color-dark);
+    }
+
+    .skill-percentage {
+        color: #bbb;
+        /* Lighter grey for percentage in dark mode */
+    }
+
+    .skill-bar {
+        background: var(--progress-bar-bg-dark);
+    }
+
+    .skill-progress {
+        background: var(--Spanish-Blue);
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .skill-item {
+        border: 2px solid white;
+    }
+
+    .skill-bar {
+        border: 1px solid white;
+    }
+
+    .skill-progress {
+        border: 1px solid white;
+        /* Ensure progress bar has contrast */
     }
 }

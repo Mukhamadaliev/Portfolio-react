@@ -23,6 +23,7 @@ Contact Section Styling
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
+  padding-left: 200px;
   z-index: 1;
 }
 

@@ -1,4 +1,9 @@
+:root {
+    --primary-color: #2667cc;
+    --white-color: #ffffff;
+}
 
+/* Sidebar */
 .sagbar {
     position: fixed;
     left: 0;
@@ -19,6 +24,7 @@
     height: 100%;
 }
 
+/* Avatar */
 .sagbar img {
     width: 120px;
     height: 120px;
@@ -27,13 +33,15 @@
     margin: 0 auto;
 }
 
+/* Username */
 .sagbar h4 {
     text-align: center;
     margin-top: 1rem;
     font-size: 1.3rem;
-    color: var(--var(--white-color)-color);
+    color: var(--white-color);
 }
 
+/* Menu */
 .sagbar ul {
     list-style: none;
     padding: 0;
@@ -49,7 +57,6 @@
     align-items: center;
     gap: 0.8rem;
     color: var(--white-color);
-
     text-decoration: none;
     padding: 0.7rem 1rem;
     border-radius: 5px;
@@ -58,12 +65,7 @@
 }
 
 .sagbar ul li a:hover {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-}
-
-.sagbar ul li a svg {
-    font-size: 1.2rem;
+    background-color: #1e4ea0;
 }
 
 .sagbar hr {
@@ -73,11 +75,14 @@
     margin: 0.5rem 0;
 }
 
-/* Media Queries */
+/* ======= Responsive ======= */
+
+/* Tablet (992px) */
 @media (max-width: 992px) {
     .sagbar {
-        width: 80px;
+        width: 20%;
         padding: 2rem 0.5rem;
+        z-index: 9999;
     }
 
     .sagbar h4 {
@@ -87,7 +92,6 @@
     .sagbar img {
         width: 60px;
         height: 60px;
-        border-width: 3px;
     }
 
     .sagbar ul li a {
@@ -95,18 +99,16 @@
         padding: 0.7rem 0;
     }
 
-    .sagbar ul li a span {
+    .sagbar ul li a span:last-child {
         display: none;
-    }
-
-    .sagbar hr {
-        margin: 0.3rem 0;
+        /* faqat icon qoladi */
     }
 }
 
+/* Small Tablet (768px) */
 @media (max-width: 768px) {
     .sagbar {
-        width: 60px;
+        width: 150px;
         padding: 1.5rem 0.3rem;
     }
 
@@ -115,35 +117,52 @@
         height: 50px;
     }
 
-    .sagbar ul li a svg {
-        font-size: 1rem;
+    .sagbar ul li a {
+        font-size: 0.9rem;
+    }
+
+    main {
+        margin-left: -150px;
+        /* mobil ekranda content to‘liq bo‘lsin */
     }
 }
 
-
+/* Mobile (576px) - Chapdan chiqadigan sidebar */
 @media (max-width: 576px) {
     .sagbar {
-        left: -250px; 
-        width: 250px;
-        transition: left 0.3s ease; 
+        top: 0;
+        left: -100%;
+        /* ❌ boshlang'ich yopiq holat */
+        width: 20%;
+        /* ekranning 70% qismi */
+        height: 100vh;
+        transition: left 0.3s ease;
+        border-radius: 0 15px 15px 0;
     }
 
-    
     .sagbar.open {
-        left: 0; 
+        left: 0;
+        /* 🔥 chapdan ochiladi */
     }
 
     .sagbar-toggle {
-        display: block; 
+        display: block;
         position: fixed;
-        left: 10px;
-        top: 10px;
+        top: 15px;
+        left: 15px;
         z-index: 101;
-        background: transparent;
+        background: var(--primary-color);
         border: none;
         cursor: pointer;
-        color: var(--primary-color, #172A45); 
+        color: var(--white-color);
         font-size: 24px;
+        padding: 10px 14px;
+        border-radius: 50%;
         transition: all 0.3s ease;
+    }
+
+    main {
+        margin-left: -150px;
+        /* mobil ekranda content to‘liq bo‘lsin */
     }
 }

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './sagbar.css';
 import img1 from './img/image.png';
 import { MdHome, MdPerson } from "react-icons/md";
-import { FaListUl, FaBriefcase, FaBars } from "react-icons/fa";
+import { FaListUl, FaBriefcase } from "react-icons/fa";
+import { IoMenu } from "react-icons/io5";
+
 import { IoMdChatboxes } from "react-icons/io";
-import { IoChevronDown, IoChevronUp } from "react-icons/io5"; // ⬅️ Pastga/tepaga icon
 
 import { NavLink } from "react-router-dom";
 
@@ -33,7 +34,9 @@ const Sagbar = () => {
     <>
       {/* Mobil pastki menyu tugmasi */}
       <button className={`sagbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleSagbar}>
-        {isOpen ? <IoChevronDown /> : <IoChevronUp />}
+        {isOpen ? <IoMenu />
+         : <IoMenu />
+}
       </button>
 
       {/* Sidebar menyu (pastdan chiqadi) */}

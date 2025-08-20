@@ -1,58 +1,47 @@
+/* sagbar.css */
 :root {
-    --primary-color: #2667cc;
-    --white-color: #ffffff;
+    --primary-color: #318CE7;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
 }
 
-/* Sidebar */
-.sagbar {
+.sagbar-desktop {
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
     height: 100vh;
-    width: 250px;
-    background-color: var(--primary-color);
+    width: 240px;
+    background: var(--primary-color);
     color: var(--white-color);
     padding: 2rem 1.5rem;
-    z-index: 100;
-    transition: all 0.3s ease;
-    overflow-y: auto;
+    z-index: 1000;
 }
 
-.sagbar-min {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-/* Avatar */
-.sagbar img {
+.sagbar-min img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto;
+    margin-left: 35px;
 }
 
-/* Username */
-.sagbar h4 {
+.sagbar-min h4 {
+    margin-bottom: 1rem;
     text-align: center;
-    margin-top: 1rem;
-    font-size: 1.3rem;
-    color: var(--white-color);
 }
 
-/* Menu */
-.sagbar ul {
+.sagbar-min ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.sagbar ul li {
-    margin-bottom: 0.5rem;
+.sagbar-min li {
+    margin: 0.8rem 0;
 }
 
-.sagbar ul li a {
+.sagbar-min a {
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -64,105 +53,131 @@
     font-size: 1rem;
 }
 
-.sagbar ul li a:hover {
+.sagbar-min a:hover {
     background-color: #1e4ea0;
 }
 
-.sagbar hr {
+hr {
     border: none;
     height: 1px;
     background-color: #4C516D;
     margin: 0.5rem 0;
 }
 
-/* ======= Responsive ======= */
-
-/* Tablet (992px) */
-@media (max-width: 992px) {
-    .sagbar {
-        width: 20%;
-        padding: 2rem 0.5rem;
-        z-index: 9999;
-    }
-
-    .sagbar h4 {
-        display: none;
-    }
-
-    .sagbar img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .sagbar ul li a {
-        justify-content: center;
-        padding: 0.7rem 0;
-    }
-
-    .sagbar ul li a span:last-child {
-        display: none;
-        /* faqat icon qoladi */
-    }
+/* Mobil tugma */
+.sagbar-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Small Tablet (768px) */
+.sagbar-toggle:hover {
+    background: var(--black-color);
+}
+
+/* Mobil sidebar */
+.sagbar-mobile {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    height: 100vh;
+    width: 240px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 2rem 1.5rem;
+    z-index: 1090;
+    transition: left 0.3s ease;
+}
+
+.sagbar-mobile.open {
+    left: 0;
+}
+
+/* Overlay */
+.sagbar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1080;
+}
+
+/* 📱 Telefonlarda sidebar yashirish */
 @media (max-width: 768px) {
-    .sagbar {
-        width: 150px;
-        padding: 1.5rem 0.3rem;
+    .sagbar-desktop {
+        display: none;
     }
 
-    .sagbar img {
-        width: 50px;
-        height: 50px;
+
+
+    @media (max-width: 768px) {
+        .sagbar {
+            width: 150px;
+            padding: 1.5rem 0.3rem;
+        }
+
+        .sagbar img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .sagbar ul li a {
+            font-size: 0.9rem;
+        }
+
+        main {
+            margin-left: -150px;
+            /* mobil ekranda content to‘liq bo‘lsin */
+        }
     }
 
-    .sagbar ul li a {
-        font-size: 0.9rem;
-    }
+    /* Mobile (576px) - Chapdan chiqadigan sidebar */
+    @media (max-width: 576px) {
+        .sagbar {
+            top: 0;
+            left: -100%;
+            /* ❌ boshlang'ich yopiq holat */
+            width: 20%;
+            /* ekranning 70% qismi */
+            height: 100vh;
+            transition: left 0.3s ease;
+            border-radius: 0 15px 15px 0;
+        }
 
-    main {
-        margin-left: -150px;
-        /* mobil ekranda content to‘liq bo‘lsin */
-    }
-}
+        .sagbar.open {
+            left: 0;
+            /* 🔥 chapdan ochiladi */
+        }
 
-/* Mobile (576px) - Chapdan chiqadigan sidebar */
-@media (max-width: 576px) {
-    .sagbar {
-        top: 0;
-        left: -100%;
-        /* ❌ boshlang'ich yopiq holat */
-        width: 20%;
-        /* ekranning 70% qismi */
-        height: 100vh;
-        transition: left 0.3s ease;
-        border-radius: 0 15px 15px 0;
-    }
+        .sagbar-toggle {
+            display: block;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 101;
+            background: var(--primary-color);
+            border: none;
+            cursor: pointer;
+            color: var(--white-color);
+            font-size: 24px;
+            padding: 10px 14px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
 
-    .sagbar.open {
-        left: 0;
-        /* 🔥 chapdan ochiladi */
-    }
-
-    .sagbar-toggle {
-        display: block;
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        z-index: 101;
-        background: var(--primary-color);
-        border: none;
-        cursor: pointer;
-        color: var(--white-color);
-        font-size: 24px;
-        padding: 10px 14px;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-    }
-
-    main {
-        margin-left: -150px;
-        /* mobil ekranda content to‘liq bo‘lsin */
+        main {
+            margin-left: -150px;
+        }
     }
 }

@@ -337,9 +337,9 @@
         /* Lighter grey for percentage in dark mode */
     }
 
-    .skill-bar {
+    /* .skill-bar {
         background: var(--progress-bar-bg-dark);
-    }
+    } */
 
     .skill-progress {
         background: var(--Spanish-Blue);

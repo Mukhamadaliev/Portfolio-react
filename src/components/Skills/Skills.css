@@ -212,7 +212,6 @@
 
     .max-width {
         padding: 0 40px;
-        /* Add horizontal padding for wider screens */
     }
 
     .skills-container {
@@ -226,7 +225,6 @@
 
     .skills-row {
         grid-template-columns: repeat(3, 1fr);
-        /* Explicitly 3 columns */
         gap: 35px;
     }
 
@@ -250,11 +248,11 @@
     }
 
     .skill-bar {
-        height: 12px;
+        height: 10px;
     }
 }
 
-/* Large Desktop (min-width: 1440px) */
+
 @media (min-width: 1440px) {
     .max-width {
         max-width: 1400px;
@@ -294,70 +292,15 @@
     }
 
     .skill-bar {
-        height: 14px;
+        height: 10px;
     }
 }
 
-/* Animation for skill bars */
+
 @media (prefers-reduced-motion: no-preference) {
     .skill-progress {
         animation: fillBar 2s ease-in-out forwards;
-        /* 'forwards' keeps the final state */
     }
 }
 
 
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-    .background-skills {
-        background: var(--background-dark);
-    }
-
-    .h1-skills {
-        color: var(--white-color);
-    }
-
-    .skill-item {
-        background: var(--card-background-dark);
-        box-shadow: 0 4px 8px var(--shadow-dark);
-        color: var(--text-color-dark);
-    }
-
-    .skill-item i {
-        color: var(--Spanish-Blue);
-    }
-
-    .skill-name {
-        color: var(--text-color-dark);
-    }
-
-    .skill-percentage {
-        color: #bbb;
-        /* Lighter grey for percentage in dark mode */
-    }
-
-    /* .skill-bar {
-        background: var(--progress-bar-bg-dark);
-    } */
-
-    .skill-progress {
-        background: var(--Spanish-Blue);
-    }
-}
-
-/* High contrast mode */
-@media (prefers-contrast: high) {
-    .skill-item {
-        border: 2px solid white;
-    }
-
-    .skill-bar {
-        border: 1px solid white;
-    }
-
-    .skill-progress {
-        border: 1px solid white;
-        /* Ensure progress bar has contrast */
-    }
-}

@@ -4,7 +4,7 @@ import { FaListUl, FaBriefcase } from "react-icons/fa";
 import { IoMdChatboxes } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import AOS from 'aos';
-import imgSagbar from './img/image.png'
+import imgSagbar from './assets/image.png'
 import 'aos/dist/aos.css';
 import './sagbar.css';
 

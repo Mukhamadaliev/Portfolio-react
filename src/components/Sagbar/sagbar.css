@@ -1,4 +1,3 @@
-/* sagbar.css */
 :root {
     --primary-color: #318CE7;
     --white-color: #FFFFFF;
@@ -60,11 +59,10 @@
 hr {
     border: none;
     height: 1px;
-    background-color: #4C516D;
+    background-color: white;
     margin: 0.5rem 0;
 }
 
-/* Mobil tugma */
 .sagbar-toggle {
     position: fixed;
     top: 15px;
@@ -84,7 +82,6 @@ hr {
     background: var(--black-color);
 }
 
-/* Mobil sidebar */
 .sagbar-mobile {
     position: fixed;
     top: 0;
@@ -102,18 +99,16 @@ hr {
     left: 0;
 }
 
-/* Overlay */
 .sagbar-overlay {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0zz.5);
     z-index: 1080;
 }
 
-/* 📱 Telefonlarda sidebar yashirish */
 @media (max-width: 768px) {
     .sagbar-desktop {
         display: none;
@@ -138,18 +133,14 @@ hr {
 
         main {
             margin-left: -150px;
-            /* mobil ekranda content to‘liq bo‘lsin */
         }
     }
 
-    /* Mobile (576px) - Chapdan chiqadigan sidebar */
     @media (max-width: 576px) {
         .sagbar {
             top: 0;
             left: -100%;
-            /* ❌ boshlang'ich yopiq holat */
             width: 20%;
-            /* ekranning 70% qismi */
             height: 100vh;
             transition: left 0.3s ease;
             border-radius: 0 15px 15px 0;
@@ -157,7 +148,6 @@ hr {
 
         .sagbar.open {
             left: 0;
-            /* 🔥 chapdan ochiladi */
         }
 
         .sagbar-toggle {
